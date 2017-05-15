@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+2014/
 env/
 build/
 develop-eggs/
