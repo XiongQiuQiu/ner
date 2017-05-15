@@ -18,12 +18,13 @@ pi_dic = {}
 states_list = ['B', 'M', 'E', 'S']
 start_nu = 4
 word_nu = 0
+line_num = 0
 start_prob_file = 'start_prob.py'
 trans_prob_file = 'trans_prob.py'
 emit_prob_file = 'emit_prob.py'
 
 def load_data():
-    '''返回词集合'''
+    '''返回句子集合'''
     # _curpath = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname(__fi le__)))
     _data_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('data/')))
     data_file = os.listdir(_data_path)
@@ -32,10 +33,23 @@ def load_data():
         for file in data_file:
             data_file_path = os.path.join(_data_path, file)
             for line in open(data_file_path):
-                line_list = line.split()
-                for word in line_list:
-                    result.add(word.strip().decode('utf-8'))
+                result.add(line.strip().decode('utf-8'))
         return result
+
+def load_2014():
+    _data_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('2014/')))
+    dir_file = os.listdir(_data_path)
+    result = set()
+    for dir in dir_file:
+        dir_file_path = os.path.normpath(os.path.join(_data_path, os.path.dirname(dir+'/')))
+        file_name_list = os.listdir(dir_file_path)
+        for file in file_name_list:
+            file_path = os.path.join(dir_file_path, file)
+            with open(file_path) as f:
+                for line in f:
+                    result.add(line.strip().decode('utf-8'))
+    return result
+
 
 def init():
     global start_nu
@@ -49,17 +63,19 @@ def init():
         emit_dic[state] = {}
         count_dic[state] = 0
 
-def get_sign(word):
+def get_sign(line):
     '''BMES标识词'''
     output_sign = []
-    if len(word) == 1:
-        output_sign.append('S')
-    elif len(word) == 2:
-        output_sign = ['B', 'E']
-    else:
-        output_sign.append('B')
-        output_sign.extend(['M'] * (len(word)-2))
-        output_sign.append('E')
+    line_seq = line.split()
+    for word in line_seq:
+        if len(word) == 1:
+            output_sign.append('S')
+        elif len(word) == 2:
+            output_sign = ['B', 'E']
+        else:
+            output_sign.append('B')
+            output_sign.extend(['M'] * (len(word)-2))
+            output_sign.append('E')
     return output_sign
 
 def output(wordset):
@@ -67,7 +83,7 @@ def output(wordset):
     start_f = file(start_prob_file, 'w')
     emit_f = file(emit_prob_file, 'w')
     trans_f = file(trans_prob_file, 'w')
-
+    print len(wordset)
     for state_key in start_dic:
         start_dic[state_key] = start_dic[state_key] / len(wordset)
     print >> start_f, start_dic
