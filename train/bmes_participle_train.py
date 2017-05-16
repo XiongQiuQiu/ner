@@ -18,7 +18,6 @@ pi_dic = {}
 states_list = ['B', 'M', 'E', 'S']
 start_nu = 4
 word_nu = 0
-line_num = 0
 start_prob_file = 'start_prob.py'
 trans_prob_file = 'trans_prob.py'
 emit_prob_file = 'emit_prob.py'
@@ -68,7 +67,7 @@ def get_sign(line):
     output_sign = []
     line_seq = line.split()
     for word in line_seq:
-        # word = word.split('/')[0]
+        word = word.split('/')[0]
         if len(word) == 1:
             output_sign.append('S')
         elif len(word) == 2:
@@ -91,7 +90,6 @@ def output(lineset):
 
     for state_key in trans_dic:
         for state_key1 in trans_dic[state_key]:
-            print trans_dic, '\n', count_dic
             trans_dic[state_key][state_key1] = trans_dic[state_key][state_key1] / count_dic[state_key]
     print >>trans_f, trans_dic
 
@@ -107,9 +105,11 @@ def output(lineset):
 def calculate(line_set):
     ''''''
     init()
+    n = 0
     for line in line_set:
-        if not line:continue
+        # if not line:continue
         line_state = get_sign(line)
+
         for i in range(len(line_state)):
             if i == 0:
                 start_dic[line_state[i]] += 1
@@ -121,12 +121,11 @@ def calculate(line_set):
                 emit_dic[line_state[i]][line[i]] = 0.0
             else:
                 emit_dic[line_state[i]][line[i]] += 1
-    print start_dic
-    print trans_dic
-    print count_dic
     output(word_set)
 
 
 if __name__ == '__main__':
     word_set = load_2014()
+    # word_set = load_data()
+    word_set.union(load_data())
     calculate(word_set)

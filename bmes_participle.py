@@ -31,7 +31,7 @@ def viterbi(obs, states, start_p, tran_p, emis_p):
     path = {}
     obs = obs.decode('utf8')
     for y in states:
-        V[0][y] = start_p[y] * emis_p[y][obs[0]]
+        V[0][y] = start_p[y] * emis_p[y].get(obs[0], 0.0)
         path[y] = [y]
 
     for d in range(1, len(obs)):
@@ -54,8 +54,10 @@ def cut_sentence(sentence):
     return prob, prob_path
 
 if __name__ == '__main__':
-    test_str = '陆承宗淡漠的脸上眉头微蹙'
+    # test_str = '陆承宗淡漠的脸上眉头微蹙'
+    test_str = '姚晨和老凌离婚了'
     prob, prob_path = cut_sentence(test_str)
     print prob
     print test_str
     print prob_path
+    # print zip(test_str.decode('utf-8'), prob_path)
