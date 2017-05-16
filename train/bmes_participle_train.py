@@ -45,7 +45,6 @@ def load_2014():
         file_name_list = os.listdir(dir_file_path)
         for file in file_name_list:
             file_path = os.path.join(dir_file_path, file)
-            print dir_file_path, file_path
             with open(file_path) as f:
                 for line in f:
                     result.add(line.strip().decode('utf-8'))
@@ -108,20 +107,20 @@ def output(lineset):
 def calculate(line_set):
     ''''''
     init()
-    for word in line_set:
-        if not word:continue
-        line_state = get_sign(word)
+    for line in line_set:
+        if not line:continue
+        line_state = get_sign(line)
         for i in range(len(line_state)):
             if i == 0:
-                start_dic[line_state[0]] += 1
-                count_dic[line_state[0]] += 1
+                start_dic[line_state[i]] += 1
+                count_dic[line_state[i]] += 1
             else:
                 trans_dic[line_state[i-1]][line_state[i]] += 1
                 count_dic[line_state[i]] += 1
-            if not emit_dic[line_state[i]].has_key(word[i]):
-                emit_dic[line_state[i]][word[i]] = 0.0
+            if not emit_dic[line_state[i]].has_key(line[i]):
+                emit_dic[line_state[i]][line[i]] = 0.0
             else:
-                emit_dic[line_state[i]][word[i]] += 1
+                emit_dic[line_state[i]][line[i]] += 1
     print start_dic
     print trans_dic
     print count_dic
