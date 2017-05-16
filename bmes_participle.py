@@ -7,9 +7,13 @@ def load_model(file_name):
     fil = file(_model_path, 'rb')
     return eval(fil.read())
 
-start_prob = load_model('prob_start.py/')
-trans_prob = load_model('prob_trans.py/')
-emit_prob = load_model('prob_emit.py/')
+# start_prob = load_model('prob_start.py/')
+# trans_prob = load_model('prob_trans.py/')
+# emit_prob = load_model('prob_emit.py/')
+
+start_prob = load_model('start_prob.py/')
+trans_prob = load_model('trans_prob.py/')
+emit_prob = load_model('emit_prob.py/')
 
 def print_dptable(V):
     print '      ',

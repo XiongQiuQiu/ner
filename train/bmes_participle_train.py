@@ -45,6 +45,7 @@ def load_2014():
         file_name_list = os.listdir(dir_file_path)
         for file in file_name_list:
             file_path = os.path.join(dir_file_path, file)
+            print dir_file_path, file_path
             with open(file_path) as f:
                 for line in f:
                     result.add(line.strip().decode('utf-8'))
@@ -68,28 +69,30 @@ def get_sign(line):
     output_sign = []
     line_seq = line.split()
     for word in line_seq:
+        # word = word.split('/')[0]
         if len(word) == 1:
             output_sign.append('S')
         elif len(word) == 2:
-            output_sign = ['B', 'E']
+            output_sign.extend(['B', 'E'])
         else:
             output_sign.append('B')
             output_sign.extend(['M'] * (len(word)-2))
             output_sign.append('E')
     return output_sign
 
-def output(wordset):
+def output(lineset):
     '''生成output'''
     start_f = file(start_prob_file, 'w')
     emit_f = file(emit_prob_file, 'w')
     trans_f = file(trans_prob_file, 'w')
-    print len(wordset)
+    print len(lineset)
     for state_key in start_dic:
-        start_dic[state_key] = start_dic[state_key] / len(wordset)
+        start_dic[state_key] = start_dic[state_key] / len(lineset)
     print >> start_f, start_dic
 
     for state_key in trans_dic:
         for state_key1 in trans_dic[state_key]:
+            print trans_dic, '\n', count_dic
             trans_dic[state_key][state_key1] = trans_dic[state_key][state_key1] / count_dic[state_key]
     print >>trans_f, trans_dic
 
@@ -102,26 +105,29 @@ def output(wordset):
     emit_f.close()
     trans_f.close()
 
-def calculate(word_set):
+def calculate(line_set):
     ''''''
     init()
-    for word in word_set:
-        word_state = get_sign(word)
-        for i in range(len(word_state)):
+    for word in line_set:
+        if not word:continue
+        line_state = get_sign(word)
+        for i in range(len(line_state)):
             if i == 0:
-                start_dic[word_state[i]] += 1
-                count_dic[word_state[i]] += 1
+                start_dic[line_state[0]] += 1
+                count_dic[line_state[0]] += 1
             else:
-                trans_dic[word_state[i-1]][word_state[i]] += 1
-                count_dic[word_state[i]] += 1
-            if not emit_dic[word_state[i]].has_key(word[i]):
-                emit_dic[word_state[i]][word[i]] = 0.0
+                trans_dic[line_state[i-1]][line_state[i]] += 1
+                count_dic[line_state[i]] += 1
+            if not emit_dic[line_state[i]].has_key(word[i]):
+                emit_dic[line_state[i]][word[i]] = 0.0
             else:
-                emit_dic[word_state[i]][word[i]] += 1
+                emit_dic[line_state[i]][word[i]] += 1
+    print start_dic
+    print trans_dic
     print count_dic
     output(word_set)
 
 
 if __name__ == '__main__':
-    word_set = load_data()
+    word_set = load_2014()
     calculate(word_set)
