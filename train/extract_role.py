@@ -14,7 +14,7 @@ def load_word_data():
                 result.add(line.strip().decode('utf-8'))
         return result
 
-def word_role(word):
+def name_word_role(word):
     word_set = load_word_data()
     l = len(word)
     if l == 2 and word in word_set:
@@ -28,6 +28,7 @@ def word_role(word):
 
 
 def ex_role(line):
+    name_role = ['D','E','Y', 'Z']
     line_list = line.split()
     final = []
     two_gram = []
@@ -37,20 +38,21 @@ def ex_role(line):
         one_word_list = word_two_gram[0].split('/')
         two_word_list = word_two_gram[1].split('/')
         if one_word_list[1] != 'nr' and two_word_list[1] == 'nr':
+            if final[-1][0] == one_word_list[0] and final[-1][1] != 'A':
+                one_word_list[1] = 'M'
             one_word_list[1] = 'K'
-            two_word_list[1] = word_role(two_word_list[0])
+            two_word_list[1] = name_word_role(two_word_list[0])
+
         elif one_word_list[1] == 'nr' and two_word_list[1] != 'nr':
-            one_word_list[1] = word_role(one_word_list[0])
+            one_word_list[1] = name_word_role(one_word_list[0])
             two_word_list[1] = 'L'
         else:
             one_word_list[1] = 'A'
             two_word_list[1] = 'A'
             if final[-1][0] == one_word_list[0]:
-            final.append(one_word_list)
+                continue
 
-        final.append()
-
-
+        final.append(one_word_list)
 
 
 def extract_2014():
