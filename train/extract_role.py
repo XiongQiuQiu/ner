@@ -2,9 +2,9 @@
 import os
 
 def load_word_data():
-    '''返回句子集合'''
-    # _curpath = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname(__fi le__)))
-    _data_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('word/')))
+    '''返回人名集合'''
+    # _curpath = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+    _data_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('data/')))
     data_file = os.listdir(_data_path)
     if data_file:
         result = set()
@@ -14,21 +14,20 @@ def load_word_data():
                 result.add(line.strip().decode('utf-8'))
         return result
 
-def name_word_role(word):
-    word_set = load_word_data()
+def name_word_role(word, word_set):
     l = len(word)
     if l == 2 and word in word_set:
-        word_state = ['Y']
+        word_state = (word, 'Y')
     elif l == 2:
-        word_state = ['B', 'E']
+        word_state = [[word[0], 'B'], [word[1], 'E']]
     elif l == 3 and word[0:2] in word_set:
-        word_state = ['X', 'D']
+        word_state = [[word[0:2], 'X'], [word[2], 'D']]
     elif l == 3:
-        word_state = ['B', 'C', 'D']
-
+        word_state = [[word[0], 'B'], [word[1], 'C'], [word[2], 'D']]
+    return word_state
 
 def ex_role(line):
-    name_role = ['D','E','Y', 'Z']
+    word_set = load_word_data()
     line_list = line.split()
     final = []
     two_gram = []
@@ -38,34 +37,43 @@ def ex_role(line):
         one_word_list = word_two_gram[0].split('/')
         two_word_list = word_two_gram[1].split('/')
         if one_word_list[1] != 'nr' and two_word_list[1] == 'nr':
-            if final[-1][0] == one_word_list[0] and final[-1][1] != 'A':
-                one_word_list[1] = 'M'
+            if final[-1][0] == one_word_list[0] and final[-1][1] == 'L':
+                final[-1][1] = 'M'
+                two_word_list = name_word_role(two_word_list[0], word_set)
+                final.extend(two_word_list)
+                continue
             one_word_list[1] = 'K'
-            two_word_list[1] = name_word_role(two_word_list[0])
-
+            two_word_list = name_word_role(two_word_list[0], word_set)
+            final.append(one_word_list)
+            final.extend(two_word_list)
         elif one_word_list[1] == 'nr' and two_word_list[1] != 'nr':
-            one_word_list[1] = name_word_role(one_word_list[0])
             two_word_list[1] = 'L'
+            final.append(two_word_list)
         else:
             one_word_list[1] = 'A'
-            two_word_list[1] = 'A'
-            if final[-1][0] == one_word_list[0]:
-                continue
-
-        final.append(one_word_list)
+            final.append(one_word_list)
+    return final
 
 
 def extract_2014():
     _data_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('2014/')))
-    write_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('2014_extract/')))
+    _write_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('2014_extract/')))
     dir_file = os.listdir(_data_path)
-    result = set()
     for dir in dir_file:
+        write_file_path = os.path.normpath(os.path.join(_write_path, os.path.dirname(dir+'/')))
         dir_file_path = os.path.normpath(os.path.join(_data_path, os.path.dirname(dir+'/')))
         file_name_list = os.listdir(dir_file_path)
         for file in file_name_list:
             file_path = os.path.join(dir_file_path, file)
+            write_path = os.path.join(write_file_path, file)
             with open(file_path) as f:
                 for line in f:
-                    result.add(line.strip().decode('utf-8'))
-    return result
+                    w_write_list = ex_role(line)
+                    print w_write_list
+                    write_line = ' '.join(i[0] + '/' + i[1] for i in w_write_list)
+                    f = open(write_path, 'w')
+                    f.write(write_line)
+                    f.close()
+
+if __name__ == '__main__':
+    extract_2014()
