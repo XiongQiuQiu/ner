@@ -1,6 +1,7 @@
 # -*- coding=utf-8 -*-
 import os
 
+
 def load_word_data():
     '''返回人名集合'''
     # _curpath = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
@@ -14,6 +15,7 @@ def load_word_data():
                 result.add(line.strip().decode('utf-8'))
         return result
 
+
 def name_word_role(word, word_set):
     l = len(word)
     if l == 2 and word in word_set:
@@ -24,7 +26,10 @@ def name_word_role(word, word_set):
         word_state = [[word[0:2], 'X'], [word[2], 'D']]
     elif l == 3:
         word_state = [[word[0], 'B'], [word[1], 'C'], [word[2], 'D']]
-    return word_state
+    try:
+        return word_state
+    except:
+        print word
 
 def ex_role(line):
     word_set = load_word_data()
@@ -65,14 +70,13 @@ def extract_2014():
         file_name_list = os.listdir(dir_file_path)
         for file in file_name_list:
             file_path = os.path.join(dir_file_path, file)
-            write_path = os.path.join(write_file_path, file)
+            write_path = os.path.join(_write_path, file)
             with open(file_path) as f:
                 for line in f:
-                    w_write_list = ex_role(line)
-                    print w_write_list
+                    w_write_list = ex_role(line.strip().decode('utf-8'))
                     write_line = ' '.join(i[0] + '/' + i[1] for i in w_write_list)
                     f = open(write_path, 'w')
-                    f.write(write_line)
+                    f.write(write_line.encode('utf8'))
                     f.close()
 
 if __name__ == '__main__':
