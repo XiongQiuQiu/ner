@@ -88,21 +88,12 @@ def extract_2014():
             write_path = os.path.join(_write_path, file)
             with open(file_path) as f:
                 for line in f:
-<<<<<<< HEAD
                     if line.strp():
                         w_write_list = ex_role(line.strip().decode('utf-8'))
                         write_line = ' '.join(i[0] + '/' + i[1] for i in w_write_list)
                         f = open(write_path, 'w')
                         f.write(write_line.encode('utf-8'))
                         f.close()
-=======
-                    if line.strp():
-                        w_write_list = ex_role(line.strip().decode('utf-8'))
-                        write_line = ' '.join(i[0] + '/' + i[1] for i in w_write_list)
-                        f = open(write_path, 'w')
-                        f.write(write_line.encode('utf-8'))
-                        f.close()
->>>>>>> 1b94fd18d7cfbaafaffceeb71603ae77270ca5b4
 
 if __name__ == '__main__':
     extract_2014()
