@@ -1,6 +1,6 @@
 # -*- coding=utf-8 -*-
 import os
-
+import log
 
 def load_word_data():
     '''返回人名集合'''
@@ -67,6 +67,8 @@ def ex_role(line):
         elif one_word_list[1] == 'nr' and two_word_list[1] != 'nr':
             two_word_list[1] = 'L'
             final.append(two_word_list)
+        elif final[-1][0] == one_word_list[0]:
+            continue
         else:
             one_word_list[1] = 'A'
             final.append(one_word_list)
@@ -77,6 +79,8 @@ def extract_2014():
     _data_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('2014/')))
     _write_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('2014_extract/')))
     dir_file = os.listdir(_data_path)
+    log_f = log.logger('exclude', 'exclude_file.log')
+
     for dir in dir_file:
         # write_file_path = os.path.normpath(os.path.join(_write_path, os.path.dirname(dir+'/')))
         dir_file_path = os.path.normpath(os.path.join(_data_path, os.path.dirname(dir+'/')))
@@ -85,18 +89,24 @@ def extract_2014():
             file_path = os.path.join(dir_file_path, file)
             write_path = os.path.join(_write_path, file)
             with open(file_path) as f:
-                print os.path.basename(file_path)
-                for line in f:
-                    if line.strip():
-                        w_write_list = ex_role(line.strip().decode('utf-8'))
-                        try:
-                            write_line = ' '.join(i[0] + '/' + i[1] for i in w_write_list)
-                        except:
-                            print w_write_list
-                            exit()
-                        f = open(write_path, 'w')
-                        f.write(write_line.encode('utf-8'))
-                        f.close()
+                file_name = os.path.basename(file_path)
+                print file_name
+                ff = open(write_path, 'w+')
+                try:
+                    for line in f:
+                        if line.strip():
+                            w_write_list = ex_role(line.strip().decode('utf-8'))
+                            try:
+                                write_line = ' '.join(i[0] + '/' + i[1] for i in w_write_list) + '\n'
+                            except:
+                                print w_write_list
+                                exit()
+                            ff.write(write_line.encode('utf-8'))
+                except Exception, e:
+                    log_f.filehand()
+                    mes = str(file_name) + str(e)
+                    log_f.f_waring(mes)
+                ff.close()
 
 if __name__ == '__main__':
     extract_2014()
