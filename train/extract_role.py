@@ -47,10 +47,10 @@ def ex_role(line):
     two_gram = []
     for i in range(len(line_list)-1):
         two_gram.append((line_list[i], line_list[i+1]))
-    try:
+    if two_gram[0][0]:
         final = init(two_gram[0][0], word_set=word_set)
-    except:
-        print two_gram
+    else:
+        return []
     for i, word_two_gram in enumerate(two_gram):
         one_word_list = word_two_gram[0].split('/')
         two_word_list = word_two_gram[1].split('/')

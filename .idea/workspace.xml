@@ -2,69 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0198ec3e-3313-43ad-8b26-dabdcd80ef6f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c1002-23995935.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c1002-23995935.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c1002-23996898.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c1002-23996898.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c1002-23997103.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c1002-23997103.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c1002-23997165.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c1002-23997165.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c1002-23997261.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c1002-23997261.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c1003-23996577.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c1003-23996577.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20279730.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20279730.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20279758.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20279758.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20279774.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20279774.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20279841.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20279841.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20279846.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20279846.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20279957.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20279957.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20280040.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20280040.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20280068.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20280068.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20280087.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20280087.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20280108.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20280108.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20280156.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20280156.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c138901-20280181.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c138901-20280181.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c14545-20280043.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c14545-20280043.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c179430-20280363.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c179430-20280363.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c179430-20281400.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c179430-20281400.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279188.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279188.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279189.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279189.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279193.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279193.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279197.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279197.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279209.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279209.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279306.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279306.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279312.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279312.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279316.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279316.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279318.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279318.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279330.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279330.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279436.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279436.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279446.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279446.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279450.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279450.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279463.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279463.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279478.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279478.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279480.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279480.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279493.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279493.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279508.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279508.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279525.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279525.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279565.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279565.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279702.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279702.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279757.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279757.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279765.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279765.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279773.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279773.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279787.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279787.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279817.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279817.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279827.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279827.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279833.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279833.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279837.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279837.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20279944.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20279944.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20280008.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20280008.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20280019.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20280019.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20280025.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20280025.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20280044.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20280044.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20280051.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20280051.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20280092.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20280092.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20280247.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20280247.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20280290.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20280290.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20280305.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20280305.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/2014_extract/c181466-20280320.txt" afterPath="$PROJECT_DIR$/train/2014_extract/c181466-20280320.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/train/role_train.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train/extract_role.py" afterPath="$PROJECT_DIR$/train/extract_role.py" />
     </list>
     <ignored path="ner.iws" />
@@ -83,6 +22,26 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="role_train.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/train/role_train.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="187">
+                    <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="ner" />
@@ -92,8 +51,8 @@
       <file leaf-file-name="extract_role.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/train/extract_role.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="91" column="55" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
+            <state relative-caret-position="-535">
+              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
               <folding>
                 <element signature="e#23#32#0" expanded="true" />
               </folding>
@@ -101,11 +60,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="bmes_participle_train.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train/bmes_participle_train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="exclude_file.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train/exclude_file.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311103">
-              <caret line="17487" column="0" selection-start-line="17487" selection-start-column="0" selection-end-line="17487" selection-end-column="0" />
+            <state relative-caret-position="-107">
+              <caret line="80109" column="0" selection-start-line="80109" selection-start-column="0" selection-end-line="80109" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,14 +82,23 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/train/extract_role.py" />
         <option value="$PROJECT_DIR$/train/exclude_file.log" />
+        <option value="$PROJECT_DIR$/train/extract_role.py" />
+        <option value="$PROJECT_DIR$/train/data/role_train.py" />
+        <option value="$PROJECT_DIR$/train/role_train.py" />
       </list>
     </option>
   </component>
@@ -490,16 +468,40 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/train/exclude_file.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311103">
-          <caret line="17487" column="0" selection-start-line="17487" selection-start-column="0" selection-end-line="17487" selection-end-column="0" />
+        <state relative-caret-position="-107">
+          <caret line="80109" column="0" selection-start-line="80109" selection-start-column="0" selection-end-line="80109" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train/data/role_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train/bmes_participle_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train/role_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="38" column="89" selection-start-line="38" selection-start-column="89" selection-end-line="38" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/train/extract_role.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="91" column="55" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
+        <state relative-caret-position="-535">
+          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
           <folding>
             <element signature="e#23#32#0" expanded="true" />
           </folding>
