@@ -41,8 +41,7 @@ def init(word, word_set):
     return word
 
 
-def ex_role(line):
-    word_set = load_word_data()
+def ex_role(word_set, line):
     line_list = line.split()
     two_gram = []
     for i in range(len(line_list)-1):
@@ -80,22 +79,26 @@ def extract_2014():
     _write_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('2014_extract/')))
     dir_file = os.listdir(_data_path)
     log_f = log.logger('exclude', 'exclude_file.log')
+    word_set = load_word_data()
 
     for dir in dir_file:
         # write_file_path = os.path.normpath(os.path.join(_write_path, os.path.dirname(dir+'/')))
         dir_file_path = os.path.normpath(os.path.join(_data_path, os.path.dirname(dir+'/')))
         file_name_list = os.listdir(dir_file_path)
+        log_f.filehand()
+        n = 0
         for file in file_name_list:
             file_path = os.path.join(dir_file_path, file)
             write_path = os.path.join(_write_path, file)
             with open(file_path) as f:
                 file_name = os.path.basename(file_path)
-                print file_name
+                n += 1
+                print file_name,n
                 ff = open(write_path, 'w+')
                 try:
                     for line in f:
                         if line.strip():
-                            w_write_list = ex_role(line.strip().decode('utf-8'))
+                            w_write_list = ex_role(word_set, line.strip().decode('utf-8'))
                             try:
                                 write_line = ' '.join(i[0] + '/' + i[1] for i in w_write_list) + '\n'
                             except:
@@ -103,7 +106,6 @@ def extract_2014():
                                 exit()
                             ff.write(write_line.encode('utf-8'))
                 except Exception, e:
-                    log_f.filehand()
                     mes = str(file_name) + str(e)
                     log_f.f_waring(mes)
                 ff.close()
