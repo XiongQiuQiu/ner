@@ -15,38 +15,24 @@ trans_dic = {}
 emit_dic = {}
 count_dic = {}
 pi_dic = {}
-states_list = ['A', 'B', 'C', 'D', 'E', 'K', 'L', 'M', 'U', 'V', 'X', 'Y', 'Z']
+states_list = ['A', 'B', 'C', 'D', 'E', 'K', 'L', 'M', 'X', 'Y', 'Z']
 start_nu = 4
 word_nu = 0
 start_prob_file = 'start_role_prob.py'
 trans_prob_file = 'trans_role_prob.py'
 emit_prob_file = 'emit_role_prob.py'
 
-def load_data():
-    '''返回句子集合'''
-    # _curpath = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname(__fi le__)))
-    _data_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('data/')))
-    data_file = os.listdir(_data_path)
-    if data_file:
-        result = set()
-        for file in data_file:
-            data_file_path = os.path.join(_data_path, file)
-            for line in open(data_file_path):
-                result.add(line.strip().decode('utf-8'))
-        return result
 
 def load_2014():
     _data_path = os.path.normpath(os.path.join(os.getcwd(), os.path.dirname('2014_extract/')))
     dir_file = os.listdir(_data_path)
     result = set()
-    for dir in dir_file:
-        dir_file_path = os.path.normpath(os.path.join(_data_path, os.path.dirname(dir+'/')))
-        file_name_list = os.listdir(dir_file_path)
-        for file in file_name_list:
-            file_path = os.path.join(dir_file_path, file)
-            with open(file_path) as f:
-                for line in f:
-                    result.add(line.strip().decode('utf-8'))
+    file_name_list = os.listdir(_data_path)
+    for file in file_name_list:
+        file_path = os.path.join(_data_path, file)
+        with open(file_path) as f:
+            for line in f:
+                result.add(line.strip().decode('utf-8'))
     return result
 
 
@@ -61,6 +47,7 @@ def init():
         start_dic[state] = 0.0
         emit_dic[state] = {}
         count_dic[state] = 0
+
 
 def output(lineset):
     '''生成output'''
@@ -86,14 +73,15 @@ def output(lineset):
     emit_f.close()
     trans_f.close()
 
-def calculate(line_set):
+
+def calculate(line_set):  # line = 'nihao/A buhao/A'
     ''''''
     init()
     n = 0
-    for line in line_set:
+    for line_ in line_set:
         # if not line:continue
-        line_state = get_sign(line)
-
+        line = [x.split('/')[0] for x in line_.split()]
+        line_state = [x.split('/')[1] for x in line_.split()]
         for i in range(len(line_state)):
             if i == 0:
                 start_dic[line_state[i]] += 1
@@ -110,6 +98,4 @@ def calculate(line_set):
 
 if __name__ == '__main__':
     word_set = load_2014()
-    # word_set = load_data()
-    word_set.union(load_data())
     calculate(word_set)
